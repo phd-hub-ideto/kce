@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /System/
+Disallow: /system/
+Disallow: /Service/
+Disallow: /service/

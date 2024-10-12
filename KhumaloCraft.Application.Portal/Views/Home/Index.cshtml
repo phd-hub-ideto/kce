@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Home.css" asp-append-version="true" />
+}
+
+<div class="container">
+    <header class="text-center mb-5">
+        <h1 class="display-4">Welcome to KhumaloCraft Emporium</h1>
+        <p>Your gateway to unique handcrafted products from artisans around the world.</p>
+    </header>
+
+    <div class="text-center my-5">
+        <h2>Discover Artisan Craftsmanship</h2>
+        <p>Explore a curated selection of artisanal goods that tell stories of skill, tradition, and creativity.</p>
+        <a class="btn btn-primary btn-lg" asp-controller="MyWork" asp-action="Index">Explore Our Collection</a>
+    </div>
+
+    <div class="text-center my-5">
+        <h2 class="mb-3">Why Choose Us?</h2>
+        <div class="row">
+            <div class="col-md-4 d-flex mb-4">
+                <div class="card">
+                    <img src="~/images/home/quality-craftsmanship.jpeg" class="card-img" alt="Quality Craftsmanship" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Unmatched Quality</h5>
+                        <p class="card-text">Each product is meticulously crafted to ensure exceptional quality and durability. Experience craftsmanship like never before with our curated selection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex mb-4">
+                <div class="card">
+                    <img src="~/images/home/global-reach.jpeg" class="card-img" alt="Global Reach" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Global Reach</h5>
+                        <p class="card-text">We connect artisans and customers across the globe, bringing diverse crafts to your doorstep. Discover unique items from every corner of the world.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex mb-4">
+                <div class="card">
+                    <img src="~/images/home/secure-shopping.jpeg" class="card-img" alt="Secure Shopping" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Secure Shopping Experience</h5>
+                        <p class="card-text">Our platform ensures a safe and enjoyable shopping experience with secure transactions and customer support. Shop with confidence and ease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center my-2">
+        <h2>Stay Connected</h2>
+        <p>Follow us on social media for updates, promotions, and more!</p>
+        <div class="social-icons">
+            <a href="#">
+                <img src="~/images/social/instagram.svg" alt="Instagram" class="social-icon">
+            </a>
+            <a href="#">
+                <img src="~/images/social/facebook.svg" alt="Facebook" class="social-icon">
+            </a>
+            <a href="#">
+                <img src="~/images/social/x-black.svg" alt="X" class="social-icon">
+            </a>
+            <a href="#">
+                <img src="~/images/social/youtube.svg" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+    </div>
+</div>

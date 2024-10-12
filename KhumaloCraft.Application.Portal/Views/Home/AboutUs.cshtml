@@ -1,0 +1,144 @@
+﻿@using KhumaloCraft.Application.Portal.Models.Home
+@model IEnumerable<TeamMemberModel>
+
+@{
+    ViewData["Title"] = "About Us";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AboutUs.css" asp-append-version="true" />
+}
+
+<div class="container">
+    <header class="text-center">
+        <h1>@ViewData["Title"]</h1>
+    </header>
+
+    <div class="card-grid mb-4">
+        <div class="card">
+            <h2 class="card-header">Our Mission</h2>
+            <div class="card-body">
+                <p>At KhumaloCraft Emporium, our mission is to bridge the gap between talented artisans and a global audience. We strive to promote handcrafted goods that celebrate cultural heritage and skilled craftsmanship. By providing artisans with a platform to showcase their work, we help preserve traditional techniques and foster cross-cultural appreciation.</p>
+                <p>We believe in the power of artisanal craftsmanship to tell stories and connect people. Our goal is to offer unique, high-quality products that stand out in a world of mass-produced goods. Through our efforts, we aim to create a more vibrant and diverse marketplace for both creators and consumers.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="card-header">Our Vision</h2>
+            <div class="card-body">
+                <p>Our vision is to become the leading global platform for artisanal crafts, recognized for our unwavering commitment to quality, sustainability, and community engagement. We envision a world where handcrafted products are celebrated and valued for their authenticity and the stories they tell.</p>
+                <p>We aim to inspire a new generation of consumers who appreciate the artistry and effort behind handmade items. By fostering a culture of respect and admiration for traditional crafts, we hope to contribute to a more sustainable and ethical global marketplace.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <h2 class="card-header">Our Values</h2>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 value-item">
+                            <h3>Integrity</h3>
+                            <p>We uphold the highest ethical standards in our interactions with artisans and customers alike. Transparency and honesty are at the core of our business practices.</p>
+                        </div>
+                        <div class="col-md-4 value-item">
+                            <h3>Innovation</h3>
+                            <p>We continually seek new ways to enhance the artisanal experience, from discovering emerging talents to adopting sustainable practices.</p>
+                        </div>
+                        <div class="col-md-4 value-item">
+                            <h3>Quality</h3>
+                            <p>We are dedicated to offering only the finest handcrafted goods, ensuring that every product meets our rigorous standards of excellence.</p>
+                        </div>
+                        <div class="col-md-4 value-item">
+                            <h3>Sustainability</h3>
+                            <p>We support eco-friendly practices and strive to minimize our environmental impact while promoting sustainable livelihoods for artisans.</p>
+                        </div>
+                        <div class="col-md-4 value-item">
+                            <h3>Community</h3>
+                            <p>We value the connections we build with artisans and customers, fostering a sense of belonging and mutual respect within our global community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <h2 class="card-header">Our Story</h2>
+                <div class="card-body">
+                    <p>KhumaloCraft Emporium was founded by James Khumalo with a simple yet profound vision: to bring the beauty and craftsmanship of handmade products to a global audience. Starting from a modest setup, James envisioned a platform where artisans could showcase their unique creations and connect with appreciative customers worldwide.</p>
+                    <p>Over the years, we have evolved from a small-scale venture into a leading platform for artisanal crafts. Our journey reflects the dedication and passion of countless artisans who pour their hearts into every piece they create. Today, KhumaloCraft Emporium stands as a testament to the power of traditional craftsmanship and the impact it can have on a global scale.</p>
+                    <p>We continue to grow and expand, always staying true to our founding principles. Our story is one of collaboration, creativity, and a commitment to celebrating the rich tapestry of global artistry.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <h2 class="card-header">Meet the Team</h2>
+                <div class="card-body">
+                    @for (int i = 0; i < Model.Count(); i += 3)
+                    {
+                        <div class="row">
+                            @for (int j = i; j < i + 3 && j < Model.Count(); j++)
+                            {
+                                var member = Model.ElementAt(j);
+                                <div class="col-md-4 mb-4">
+                                    <div class="team-member text-center">
+                                        <img src="@member.ImageUrl" class="team-member-img img-fluid rounded-circle" alt="@member.Name" loading="lazy">
+                                        <h3>@member.Name</h3>
+                                        <p>@member.Role.GetBestDescription()</p>
+                                        <p><img src="~/images/social/mail.svg" alt="Email" class="email-icon"> <a href="mailto:@member.EmailAddress">@member.EmailAddress</a></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <h2 class="card-header">Our Impact</h2>
+                <div class="card-body">
+                    <p>We are immensely proud of our role in supporting artisans from diverse backgrounds and helping them build sustainable livelihoods. Our platform not only provides a marketplace for their creations but also plays a vital role in preserving traditional crafts and fostering cultural exchange.</p>
+                    <p>By connecting artisans with a global audience, we contribute to the preservation of cultural heritage and the promotion of ethical consumption. Our efforts extend beyond commerce, as we actively engage with and support the communities of the artisans we work with.</p>
+                    <p>Our impact is measured not just in sales but in the positive changes we help bring about in the lives of artisans and their communities. We are committed to making a difference through our work and continuing to support and uplift the talented individuals who make our platform possible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <h2 class="card-header">Our Promise</h2>
+                <div class="card-body">
+                    <p>We promise to deliver a secure, user-friendly platform where artisans can thrive and customers can discover unique, high-quality handcrafted goods. Our commitment to excellence ensures that every transaction is smooth, secure, and satisfying for both parties.</p>
+                    <p>We are dedicated to maintaining the highest standards of service and support, providing an exceptional experience for all users of our platform. Our promise extends to ensuring that every product sold on our site meets our rigorous quality standards and represents the best of artisanal craftsmanship.</p>
+                    <p>Our customers can trust in our unwavering dedication to their satisfaction, and artisans can rely on us to be a supportive and reliable partner in their journey. We are here to facilitate meaningful connections and ensure that every interaction with KhumaloCraft Emporium is a positive one.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <h2 class="card-header">Join Our Journey</h2>
+                <div class="card-body">
+                    <p>We invite you to join us on our journey of celebrating and promoting artisanal craftsmanship. Stay connected with us through our social media channels and subscribe to our newsletter to receive the latest updates, exclusive offers, and stories from the world of handcrafted goods.</p>
+                    <p>By following us, you'll be the first to know about new product launches, special events, and behind-the-scenes insights into our work. Your support helps us continue our mission and expand our reach, bringing the beauty of artisanal crafts to more people around the globe.</p>
+                    <p>We look forward to having you as part of our community and sharing the joy of discovering exceptional handmade products with you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

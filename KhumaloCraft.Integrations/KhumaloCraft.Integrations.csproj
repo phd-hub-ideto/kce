@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
+        <PackageReference Include="System.Net.Http.Json" Version="8.0.1" />
+        <PackageReference Include="System.ServiceModel.Http" Version="8.0.0" />
+        <PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\KhumaloCraft.Application\KhumaloCraft.Application.csproj" />
+        <ProjectReference Include="..\KhumaloCraft.Domain\KhumaloCraft.Domain.csproj" />
+        <ProjectReference Include="..\KhumaloCraft\KhumaloCraft.csproj" />
+    </ItemGroup>
+
+</Project>

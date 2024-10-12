@@ -1,0 +1,28 @@
+﻿@using KhumaloCraft.Application.ImageServer.Models.System
+@model HomeModel
+
+@{
+    ViewBag.Title = "Home Page";
+    ViewData["Title"] = "Home page";
+}
+
+@using (Html.BeginForm("Home", "System", FormMethod.Get))
+{
+    <table class="simpleTable">
+        <tr>
+            <td>@Html.Label("Image Id")</td>
+            <td>@Html.TextBoxFor(m => m.ImageId)</td>
+        </tr>
+        @* TODO-LP : Uncomment when you have implemented image resizer
+            <tr>
+            <td>@Html.Label("Image Option")</td>
+            <td>@Html.DropDownListFor(m => m.ImageSizeOption, Model.ImageSizeOptions)</td>
+        </tr> *@
+        <tr>
+            <td />
+            <td>
+                <button type="submit">Get Image</button>
+            </td>
+        </tr>
+    </table>
+}

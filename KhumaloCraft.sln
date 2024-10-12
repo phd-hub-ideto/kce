@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Application.Portal", "KhumaloCraft.Application.Portal\KhumaloCraft.Application.Portal.csproj", "{96C644B5-CE27-4471-A026-7EC1A6818648}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Domain", "KhumaloCraft.Domain\KhumaloCraft.Domain.csproj", "{FCCDEEAB-830C-4024-9E96-CF965CA09B96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft", "KhumaloCraft\KhumaloCraft.csproj", "{699ACC75-8A3E-4988-849F-95745BD92C14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Application.Dependencies", "KhumaloCraft.Application.Dependencies\KhumaloCraft.Application.Dependencies.csproj", "{025A886E-41DF-4A9F-82D0-299699A2A1C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Data.Sql", "KhumaloCraft.Data.Sql\KhumaloCraft.Data.Sql.csproj", "{98318C63-5657-4A97-9967-CC049A65756E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Data.Entities", "KhumaloCraft.Data.Entities\KhumaloCraft.Data.Entities.csproj", "{061BDF9D-B5B5-4C9C-BE51-7196BD3990E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Configuration", "KhumaloCraft.Configuration\KhumaloCraft.Configuration.csproj", "{C36E7BAA-4C7C-472C-9F54-396F3DCFF7F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF7005C2-6D44-4EAE-BA86-545BF972FE26}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		appsettings.json = appsettings.json
+		appsettings.template.json = appsettings.template.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Application", "KhumaloCraft.Application\KhumaloCraft.Application.csproj", "{0828720E-5D4A-4340-89B3-260C144D5069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhumaloCraft.Integrations", "KhumaloCraft.Integrations\KhumaloCraft.Integrations.csproj", "{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhumaloCraft.Application.ImageServer", "KhumaloCraft.Application.ImageServer\KhumaloCraft.Application.ImageServer.csproj", "{5B0E6CB7-C135-483E-857D-55DE30F5A063}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96C644B5-CE27-4471-A026-7EC1A6818648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C644B5-CE27-4471-A026-7EC1A6818648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C644B5-CE27-4471-A026-7EC1A6818648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C644B5-CE27-4471-A026-7EC1A6818648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCDEEAB-830C-4024-9E96-CF965CA09B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCDEEAB-830C-4024-9E96-CF965CA09B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCDEEAB-830C-4024-9E96-CF965CA09B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCDEEAB-830C-4024-9E96-CF965CA09B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699ACC75-8A3E-4988-849F-95745BD92C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699ACC75-8A3E-4988-849F-95745BD92C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699ACC75-8A3E-4988-849F-95745BD92C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699ACC75-8A3E-4988-849F-95745BD92C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025A886E-41DF-4A9F-82D0-299699A2A1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025A886E-41DF-4A9F-82D0-299699A2A1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025A886E-41DF-4A9F-82D0-299699A2A1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025A886E-41DF-4A9F-82D0-299699A2A1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98318C63-5657-4A97-9967-CC049A65756E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98318C63-5657-4A97-9967-CC049A65756E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98318C63-5657-4A97-9967-CC049A65756E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98318C63-5657-4A97-9967-CC049A65756E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061BDF9D-B5B5-4C9C-BE51-7196BD3990E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061BDF9D-B5B5-4C9C-BE51-7196BD3990E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061BDF9D-B5B5-4C9C-BE51-7196BD3990E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061BDF9D-B5B5-4C9C-BE51-7196BD3990E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36E7BAA-4C7C-472C-9F54-396F3DCFF7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36E7BAA-4C7C-472C-9F54-396F3DCFF7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36E7BAA-4C7C-472C-9F54-396F3DCFF7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36E7BAA-4C7C-472C-9F54-396F3DCFF7F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0828720E-5D4A-4340-89B3-260C144D5069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0828720E-5D4A-4340-89B3-260C144D5069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0828720E-5D4A-4340-89B3-260C144D5069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0828720E-5D4A-4340-89B3-260C144D5069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {411F404B-388E-4868-9268-32E7C49794D7}
+	EndGlobalSection
+EndGlobal

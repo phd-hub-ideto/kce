@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icn/social/google-plus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icn/social/google-plus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#DD4B39" cx="15" cy="15" r="12"></circle>
+        <rect id="Rectangle" fill="#FFFFFF" x="19" y="14.5" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" transform="translate(22.000000, 15.500000) rotate(-90.000000) translate(-22.000000, -15.500000) " x="19" y="14.5" width="6" height="2"></rect>
+        <path d="M12.5,10 C9.46277778,10 7,12.4627778 7,15.5 C7,18.5372222 9.46277778,21 12.5,21 C15.5372222,21 18,18.5372222 18,15.5 C18,15.2484259 17.9521297,14.933034 17.8563891,14.5538243 L12.4998741,14.5538243 L12.4998741,16.2888794 L16.1666667,16.2888794 C15.874861,18.0229073 14.3165277,19.1666667 12.5,19.1666667 C10.4741669,19.1666667 8.83333333,17.5258335 8.83333333,15.5 C8.83333333,13.4741669 10.4741669,11.8333333 12.5,11.8333333 C13.4166667,11.8333333 14.2523612,12.1725002 14.8955556,12.7286113 L16.2094444,11.4422222 C15.2316667,10.5469446 13.93,10 12.5,10 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

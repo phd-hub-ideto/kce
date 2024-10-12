@@ -1,0 +1,2 @@
+INSERT INTO [User] (Username, FirstName, LastName, MobileNumber, ImageReferenceId, CreationDate, ActivatedDate, ActivationEmailSentDate, LastLoginDate, PasswordHash, PasswordSalt, ValidatedEmail, Deleted)
+VALUES ('superuser@khumalocraft.co.za', 'Super', 'User', '0821345679', NULL, GETDATE(), GETDATE(), GETDATE(), NULL, 0x0000000000000000, 0x6BC735A23F6CB069, 1, 0)

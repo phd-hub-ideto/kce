@@ -1,0 +1,112 @@
+﻿@using KhumaloCraft.Domain.Security
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - KhumaloCraft Emporium</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        @RenderSection("Styles", required: false)
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KhumaloCraft</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MyWork" asp-action="Index">My Work</a>
+                            </li>
+                        </ul>
+
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark position-relative" asp-area="" asp-controller="Cart" asp-action="Cart">
+                                    <i class="fas fa-shopping-cart"></i> Cart
+                                </a>
+                            </li>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                var user = (User as KhumaloCraftPrincipal).User;
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="@user.Username">
+                                        <i class="fas fa-user-circle"></i> @user.FirstName @user.LastName
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                        <li class="dropdown-header">User</li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Profile" asp-action="MyProfile"><i class="fas fa-user"></i> Profile</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Profile" asp-action="ChangePassword"><i class="fas fa-lock"></i> Change Password</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="UserOrders" asp-action="Orders"><i class="fas fa-box"></i> Orders</a></li>
+
+                                        @if (PermissionManager.Current.IsAdmin())
+                                        {
+                                            <li><hr class="dropdown-divider" /></li>
+                                            <li class="dropdown-header">Admin</li>
+                                            @if (PermissionManager.Current.HasPermission(AdministratorPermission.ManageProduct))
+                                            {
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Craftwork" asp-action="Craftworks"><i class="fas fa-paint-brush"></i> Craftworks</a></li>
+                                            }
+
+                                            @if (PermissionManager.Current.HasPermission(AdministratorPermission.ViewOrders) ||
+                                                 PermissionManager.Current.HasPermission(AdministratorPermission.ProcessOrder))
+                                            {
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="ManageOrders" asp-action="ViewOrders"><i class="fas fa-box"></i> Manage Orders</a></li>
+                                            }
+
+                                            @if (PermissionManager.Current.HasPermission(AdministratorPermission.ManageUsers))
+                                            {
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="UserManagement" asp-action="Users"><i class="fas fa-users"></i> Manage Users</a></li>
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="UserManagement" asp-action="CreateUser"><i class="fas fa-user-plus"></i> Create User</a></li>
+                                            }
+                                            <li><hr class="dropdown-divider" /></li>
+                                        }
+
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted text-center bg-white py-3">
+            <p>&copy; @DateTime.Now.Year KhumaloCraft Emporium. All Rights Reserved.</p>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

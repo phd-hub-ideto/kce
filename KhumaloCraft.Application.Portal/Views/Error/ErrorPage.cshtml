@@ -1,0 +1,21 @@
+﻿@using KhumaloCraft.Application.Portal.Models.Error
+@using KhumaloCraft.Application.Mvc.Extensions
+@model ErrorModel
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ErrorPage.css" asp-append-version="true" />
+}
+
+<div class="container">
+    <div class="error-page">
+       <div class="row">
+           <div class="col-12">
+               <div class="b-tile m-padding-large">
+                   <h1 class="title">@Model.H1</h1>
+                   <p class="e-description">@Model.Description</p>
+                   @Html.Anchor(Model.HomeAnchor)
+               </div>
+           </div>
+       </div>        
+    </div>
+</div>
