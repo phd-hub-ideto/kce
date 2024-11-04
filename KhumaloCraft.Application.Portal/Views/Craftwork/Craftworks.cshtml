@@ -14,33 +14,35 @@
         </a>
     </div>
 
-    <table class="table table-hover table-bordered table-striped">
-        <thead class="table-light">
-            <tr>
-                <th>#Id</th>
-                <th>Created</th>
-                <th>Updated</th>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Quantity</th>
-                <th>Is Active</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var craftwork in Model)
-            {
-                <tr onclick="location.href='@craftwork.ViewUrl'" style="cursor:pointer;">
-                    <td>@craftwork.Id</td>
-                    <td>@craftwork.CreatedDate</td>
-                    <td>@craftwork.UpdatedDate</td>
-                    <td>@craftwork.Title</td>
-                    <td>@craftwork.Price</td>
-                    <td>@craftwork.Category</td>
-                    <td>@craftwork.Quantity</td>
-                    <td>@craftwork.IsActive</td>
+    <div style="overflow-x: auto">
+        <table class="table table-hover table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th>#Id</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Is Active</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var craftwork in Model)
+                {
+                    <tr onclick="location.href='@craftwork.ViewUrl'" style="cursor:pointer;">
+                        <td>@craftwork.Id</td>
+                        <td>@craftwork.CreatedDate</td>
+                        <td>@craftwork.UpdatedDate</td>
+                        <td>@craftwork.Title</td>
+                        <td>@craftwork.Price</td>
+                        <td>@craftwork.Category</td>
+                        <td>@craftwork.Quantity</td>
+                        <td>@craftwork.IsActive</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

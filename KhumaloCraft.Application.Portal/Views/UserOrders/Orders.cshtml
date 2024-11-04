@@ -17,30 +17,32 @@
     else
     {
         <p>Review your orders below. Click on any order to view more details.</p>
-        <table class="table table-hover table-bordered table-striped">
-            <thead class="table-light">
-                <tr>
-                    <th><i class="fas fa-receipt"></i> Order Id</th>
-                    <th><i class="fas fa-calendar-alt"></i> Created Date</th>
-                    <th><i class="fas fa-calendar-check"></i> Updated Date</th>
-                    <th><i class="fas fa-info-circle"></i> Order Status</th>
-                    <th><i class="fas fa-money-bill-wave"></i> Total Amount</th>
-                    <th><i class="fas fa-percent"></i> Vat Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var order in Model)
-                {
+        <div style="overflow-x: auto">
+            <table class="table table-hover table-bordered table-striped">
+                <thead class="table-light">
                     <tr>
-                        <td>@order.Id</td>
-                        <td>@order.CreatedDate</td>
-                        <td>@order.UpdatedDate</td>
-                        <td>@order.OrderStatus</td>
-                        <td>@order.TotalAmount</td>
-                        <td>@order.VatRate</td>
+                        <th><i class="fas fa-receipt"></i> Order Id</th>
+                        <th><i class="fas fa-calendar-alt"></i> Created Date</th>
+                        <th><i class="fas fa-calendar-check"></i> Updated Date</th>
+                        <th><i class="fas fa-info-circle"></i> Order Status</th>
+                        <th><i class="fas fa-money-bill-wave"></i> Total Amount</th>
+                        <th><i class="fas fa-percent"></i> Vat Rate</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.CreatedDate</td>
+                            <td>@order.UpdatedDate</td>
+                            <td>@order.OrderStatus</td>
+                            <td>@order.TotalAmount</td>
+                            <td>@order.VatRate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </div>

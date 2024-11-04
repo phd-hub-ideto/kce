@@ -30,7 +30,7 @@ public sealed class CraftworkGridItem
             Category = craftwork.Category.GetBestDescription(),
             Quantity = craftwork.Quantity,
             IsActive = craftwork.IsActive ? "Yes" : "No",
-            ViewUrl = urlHelper.Action<CraftworkController>(c => c.ViewCraftwork(craftwork.Id.Value))
+            ViewUrl = urlHelper.Action<CraftworkController>(c => c.Craftwork(craftwork.Id.Value))
         };
     }
 }

@@ -86,7 +86,7 @@ public class ImageRepository : IImageRepository
         var dalImages = scope.KhumaloCraft.ImageReference
                              .Where(i =>
                                  referenceIds.Contains(i.ReferenceId) &&
-                                 i.DeletedOn == null);
+                                 i.DeletedOn != null);
 
         foreach (var dalImage in dalImages)
         {

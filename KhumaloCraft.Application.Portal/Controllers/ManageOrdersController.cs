@@ -1,4 +1,5 @@
 ﻿using KhumaloCraft.Application.Mvc;
+using KhumaloCraft.Application.Portal.Hubs;
 using KhumaloCraft.Application.Portal.Models.ManageOrders;
 using KhumaloCraft.Application.Portal.Models.UserOrders;
 using KhumaloCraft.Application.Portal.Routing;
@@ -12,7 +13,8 @@ namespace KhumaloCraft.Application.Portal.Controllers;
 [Authorize]
 public sealed class ManageOrdersController(
     IOrderService orderService,
-    IKCRouteBuilder kCRouteBuilder) : BaseController
+    IKCRouteBuilder kCRouteBuilder,
+    INotificationsService notificationsService) : BaseController
 {
     [HttpGet]
     [Route("admin/orders", Name = RouteNames.ManageOrders.ViewOrders)]
@@ -56,7 +58,7 @@ public sealed class ManageOrdersController(
 
     [HttpPost]
     [Route("admin/order/update", Name = RouteNames.ManageOrders.UpdateOrder)]
-    public ActionResult UpdateOrder([FromForm] OrderModel model)
+    public async Task<ActionResult> UpdateOrder([FromForm] OrderModel model)
     {
         if (!HasAccess(Domain.Security.AdministratorPermission.ProcessOrder))
         {
@@ -72,6 +74,8 @@ public sealed class ManageOrdersController(
 
         if (orderService.TryUpdateOrder(order))
         {
+            await notificationsService.SendNotification(NotificationType.OrderUpdated, orderId: order.Id.Value);
+
             return Redirect(Url.Action<ManageOrdersController>(c => c.ViewOrder(order.Id.Value)));
         }
 

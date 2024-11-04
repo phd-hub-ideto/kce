@@ -23,6 +23,7 @@ public class KhumaloCraftDbContext : DbContext
     public DbSet<DalRolePermission> RolePermission { get; set; }
     public DbSet<DalSecurityEntityType> SecurityEntityType { get; set; }
     public DbSet<DalSetting> Setting { get; set; }
+    public DbSet<DalSiteVisitLog> SiteVisitLog { get; set; }
     public DbSet<DalUser> User { get; set; }
     public DbSet<DalUserRole> UserRole { get; set; }
 
@@ -331,6 +332,20 @@ public class KhumaloCraftDbContext : DbContext
                 .WithMany()
                 .HasForeignKey(d => d.LastEditedByUserId)
                 .HasConstraintName("FK_Setting_LastEditedByUserId")
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        //DalSiteVisitLog
+        modelBuilder.Entity<DalSiteVisitLog>(entity =>
+        {
+            entity.HasKey(d => d.Id)
+                  .HasName("PK_SiteVisitLog_Id")
+                  .IsClustered();
+
+            entity.HasOne(d => d.VisitUser)
+                .WithMany()
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_SiteVisitLog_UserId")
                 .OnDelete(DeleteBehavior.Restrict);
         });
 

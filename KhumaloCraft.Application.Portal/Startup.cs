@@ -5,6 +5,7 @@ using KhumaloCraft.Application.Dependencies;
 using KhumaloCraft.Application.DisplayModes;
 using KhumaloCraft.Application.Hosting;
 using KhumaloCraft.Application.Monitoring;
+using KhumaloCraft.Application.Portal.Hubs;
 using KhumaloCraft.Dependencies;
 using KhumaloCraft.Domain.Authentication.Passwords;
 using KhumaloCraft.Domain.Dates;
@@ -13,6 +14,8 @@ using KhumaloCraft.Domain.Users;
 using KhumaloCraft.Helpers;
 using KhumaloCraft.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask.ContextImplementations;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
 using System.Text.Json.Serialization;
@@ -44,6 +47,20 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         _container = DependencyManager.ConfigureDefaultContainer(_ => { }, false);
+
+        services.AddSignalR();
+        //TODO-LP : Enabled Durable Functions Orchestrator
+        /*
+        services.AddDurableClientFactory(options =>
+        {
+            options.TaskHub = "OrderProcessingHub";
+        });
+
+        services.AddSingleton<IDurableOrchestrationClient>(provider =>
+        {
+            var context = provider.GetRequiredService<IDurableClientFactory>();
+            return context.CreateClient();
+        });*/
 
         var mvcBuilder = services.AddControllersWithViews()
         .AddJsonOptions(j =>
@@ -149,6 +166,11 @@ public class Startup
         // *Important*, a lot can go wrong when cookies get cached, this must remain the first middleware to get executed.
         CookieCacheability.Use(app);
 
+        // Use authentication first to set up the user context
+        app.UseAuthentication();
+
+        SiteVisitLogMiddlewareConfig.Use(app, _container);
+
         ReturnUrlValidationMiddlewareConfig.Use(app, _container);
 
         SecurityHeadersConfig.Use(app);
@@ -179,11 +201,15 @@ public class Startup
 
         app.UseSession();
 
-        app.UseAuthentication();
+        //Moved to the top just before SiteVisitLogMiddlewareConfig middleware to set up the user context before logging
+        //app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
         {
+            endpoints.MapControllers();
+            endpoints.MapHub<NotificationHub>("/notificationHub");
+
             var httpTransform = transformBuilder.Create(context =>
             {
                 context.AddPathRemovePrefix("/answers");

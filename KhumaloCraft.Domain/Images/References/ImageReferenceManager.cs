@@ -1,4 +1,5 @@
 ﻿using KhumaloCraft.Dependencies;
+using System.Transactions;
 
 namespace KhumaloCraft.Domain.Images;
 
@@ -41,18 +42,19 @@ internal class ImageReferenceManager : IImageReferenceManager
 
     private void CommitAll(ImageReferenceAccumulator accumulator)
     {
-        using (DomainScope.Begin())
-        {
-            if (accumulator.Removed.Any())
-            {
-                _imageRepository.Unreference(accumulator.Removed);
-            }
+        using var scope = new TransactionScope();
 
-            if (accumulator.Added.Any())
-            {
-                _imageRepository.Reference(accumulator.Added);
-            }
+        if (accumulator.Removed.Any())
+        {
+            _imageRepository.Unreference(accumulator.Removed);
         }
+
+        if (accumulator.Added.Any())
+        {
+            _imageRepository.Reference(accumulator.Added);
+        }
+
+        scope.Complete();
     }
 
     private static void UpdateReference(ImageHandle imageHandle, ImageReferenceAccumulator accumulator)

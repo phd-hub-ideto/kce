@@ -39,4 +39,21 @@ public sealed class Craftwork
     public int Quantity { get; set; }
 
     public Craftwork() { }
+
+    public void AddQuantity(int quantity)
+    {
+        Quantity += quantity;
+    }
+
+    public bool TryRemoveQuantity(int quantity)
+    {
+        if (Quantity >= quantity)
+        {
+            Quantity -= quantity;
+
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -60,9 +60,9 @@ public static class ReturnUrlValidationMiddlewareConfig
         {
             var scheme = absoluteUri.Scheme;
 
-            if (scheme is not "https" || absoluteUri.PathAndQuery.StartsWith("///")) return false;
+            if (scheme == Uri.UriSchemeHttp) return false;
 
-            return allowedDomains.Contains(absoluteUri.Host);
+            return scheme == Uri.UriSchemeFile || allowedDomains.Contains(absoluteUri.Host);
         }
 
         return false;

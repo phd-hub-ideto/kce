@@ -47,3 +47,41 @@ body {
 .hidden-kc {
     display: none !important;
 }
+
+#notificationContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none;
+    max-width: 400px;
+}
+
+.notification {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    opacity: 1;
+    transition: opacity 1s ease-out, transform 0.3s ease-in;
+}
+
+.notification .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.notification.fade-out {
+    opacity: 0;
+    transform: translateX(50px); /* Slide out to the right */
+}

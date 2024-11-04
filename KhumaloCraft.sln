@@ -29,9 +29,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Application", "KhumaloCraft.Application\KhumaloCraft.Application.csproj", "{0828720E-5D4A-4340-89B3-260C144D5069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhumaloCraft.Integrations", "KhumaloCraft.Integrations\KhumaloCraft.Integrations.csproj", "{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Integrations", "KhumaloCraft.Integrations\KhumaloCraft.Integrations.csproj", "{2B9DD09E-4960-4BD0-8CA5-3A6FA758C508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhumaloCraft.Application.ImageServer", "KhumaloCraft.Application.ImageServer\KhumaloCraft.Application.ImageServer.csproj", "{5B0E6CB7-C135-483E-857D-55DE30F5A063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Application.ImageServer", "KhumaloCraft.Application.ImageServer\KhumaloCraft.Application.ImageServer.csproj", "{5B0E6CB7-C135-483E-857D-55DE30F5A063}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft.Application.DurableFunctions", "KhumaloCraft.Application.DurableFunctions\KhumaloCraft.Application.DurableFunctions.csproj", "{79767864-66E8-4EEA-9DBB-708CAFF2F6B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B0E6CB7-C135-483E-857D-55DE30F5A063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79767864-66E8-4EEA-9DBB-708CAFF2F6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79767864-66E8-4EEA-9DBB-708CAFF2F6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79767864-66E8-4EEA-9DBB-708CAFF2F6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79767864-66E8-4EEA-9DBB-708CAFF2F6B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

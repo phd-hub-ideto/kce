@@ -1,5 +1,6 @@
 ﻿using KhumaloCraft.Dependencies;
 using KhumaloCraft.Domain.Carts;
+using KhumaloCraft.Domain.Inventory;
 using KhumaloCraft.Domain.Structs;
 using System.Transactions;
 
@@ -10,6 +11,7 @@ public sealed class OrderService(
     IOrderRepository orderRepository,
     ICartService cartService,
     ICartRepository cartRepository,
+    IInventoryService inventoryService,
     ISettings settings) : IOrderService
 {
     //TODO-LP : Implement strict validations and custom error messages
@@ -41,6 +43,8 @@ public sealed class OrderService(
             cart.Complete(); //Deactivate / close / complete the cart and we will create a new one for the user
 
             cartRepository.Upsert(cart);
+
+            inventoryService.UpdateInventory(order.Id.Value);
 
             cartService.CreateUserCart();
 

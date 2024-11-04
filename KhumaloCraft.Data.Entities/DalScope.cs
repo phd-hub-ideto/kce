@@ -60,7 +60,8 @@ public class DalScope : IDalScope, ITransaction
 
     public DateTime ServerDate()
     {
-        return UseDatabaseServerDate ? DateTime.Now : HighResolutionDateTime.Now;
+        //TODO-LP : Better way for determining time. For now, we will use South African Time (UTC + 2 hours)
+        return UseDatabaseServerDate ? DateTime.UtcNow.AddHours(2) : HighResolutionDateTime.Now;
     }
 
     public void Commit()

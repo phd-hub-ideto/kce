@@ -71,9 +71,11 @@ public sealed class CraftworkRepository(
         UpsertCraftworkQuantity(dalCraftwork.Id, craftwork.Quantity);
 
         craftwork.Id = dalCraftwork.Id;
+
+        SaveImages(craftwork.Id.Value, craftwork.CraftworkImages);
     }
 
-    private void UpsertCraftworkQuantity(int craftworkId, int quantity)
+    public void UpsertCraftworkQuantity(int craftworkId, int quantity)
     {
         using var scope = DalScope.Begin();
 

@@ -28,9 +28,12 @@ public sealed class AccountController(
 {
     [HttpGet]
     [Route("login", Name = RouteNames.Account.Login)]
-    public ActionResult Login()
+    public ActionResult Login(string returnUrl = null)
     {
-        var model = new LoginModel();
+        var model = new LoginModel
+        {
+            ReturnUrl = returnUrl
+        };
 
         if (principalResolver.IsAuthenticated())
         {
